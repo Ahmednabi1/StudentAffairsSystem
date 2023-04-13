@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel= "stylesheet" href="style.css">
+   <script src="ourScript.js"></script>
+   <div class="topnav">
+		<a href="HomePage.htm">Home</a>
+		<a href="AddaNewStudent.htm">Add a New Student</a>
+		<a href="DisplayAllStudents.htm">Display all Students</a>
+		<a href="Update.html">Update Student's Info</a>
+		<a class="active" href="Search.htm">Search For a Student</a>
+	  </div>
+	  <br><br>
+
+</head>
+<body>
+   <div class="container">
+      <h1>Search For a Student</h1>
+
+      <H3>Enter student Name</H3>
+        <input type="text" placeholder="search.." id="SEARCH_NAME">
+        <button onclick="searchAndShowStudent()">Search</button>
+      <br><br>
+
+      <table id="StudentTableinSearch">
+         <thead>
+            <tr>
+               <th>Name</th>
+               <th>ID</th>
+               <th>Level</th>
+               <th>Department</th>
+            </tr>
+         </thead>
+         <tbody>
+         </tbody>
+      </table>
+
+</body>
+
+</html>

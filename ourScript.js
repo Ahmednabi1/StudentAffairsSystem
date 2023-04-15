@@ -86,11 +86,11 @@ function retrieveStudentFromLocalStorageByID(id) {
       return student.ID === id;
     });
     
-    return Array.isArray(matchingStudents) ? matchingStudents : Array.from(matchingStudents);
+    return matchingStudents;
 }
   
 // Function to edit a student in local storage by ID
-function editStudentInLocalStorage(id, newStudent) {
+function updateStudentInLocalStorage(id, newStudent) {
     var storedStudents = JSON.parse(localStorage.getItem("students")) || [];
     var index = storedStudents.findIndex(function(student) {
         return student.ID === id;

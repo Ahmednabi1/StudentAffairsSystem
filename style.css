@@ -25,10 +25,11 @@ h1 {
 .topnav {
     border-radius: 10px;
     border: 1px solid #222831;
-position: fixed;
+    position: fixed;
     background-color: #333;
     overflow: hidden;
     width: 100%;
+    height: auto;
     top: 0px;
     left: 0px;
 }
@@ -37,7 +38,7 @@ position: fixed;
     float: left;
     color: #f2f2f2;
     text-align: center;
-    padding: 16px 40px;
+    padding: 16px 60px;
     text-decoration: none;
     font-size: 17px;
 }
@@ -196,6 +197,7 @@ img.backgroundS {
 .header h2 {
     text-align: center;
 }
+/*________________________________addStud________________________________________________________________*/
 
 #key{
 
@@ -221,11 +223,11 @@ img.backgroundS {
 
 
 }
-label{
+/* label{
     display: block;
     margin-bottom: 5px;
     font-weight: bold;
-}
+} */
 .addstudent{
     margin: 40px 0 10px 0;
     font-size: 40px;

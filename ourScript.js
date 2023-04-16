@@ -88,6 +88,16 @@ function retrieveStudentFromLocalStorageByID(id) {
     
     return matchingStudents;
 }
+function checkIfStudentIDExists(id) {
+    var matchingStudents = retrieveStudentFromLocalStorageByID(id);
+    if (matchingStudents.length > 0) {
+        document.getElementById("warning-message").innerHTML = "Student with this ID already exists!";
+        return true;
+    }
+    else {
+        return false;
+    }
+}
   
 // Function to edit a student in local storage by ID
 function updateStudentInLocalStorage(id, newStudent) {

@@ -3,7 +3,6 @@
 <head>
     <link rel="stylesheet" href="style.css">
         <script src="ourScript.js"></script>
-    <script src="AddStudentJS.js"></script>
 
 
     <div class="topnav">
@@ -22,11 +21,11 @@
 </head>
 <body style="background-color: white">
 
-
+<div id="message">
 <div id="parent">
 <div id="key"  >
     <h1 class="addstudent" style="font-family: 'Garamond'" >Add Student Page</h1>
-    <label for="fname">Student ID:         </label>
+    <label for="fname2">Student ID:         </label>
     <input type="text" id="fname2" name="fname2" placeholder="enter ID"><br><br>
     <label for="fname"> Student Name:       </label>
     <input type="text" id="fname9" name="fname9" placeholder="enter student name"><br><br>
@@ -49,7 +48,7 @@
     </select>
     <label for="fname">Status:             </label>
     <label class="status-switch">
-        <input type="checkbox" class="status-checkbox" value="active"> 
+        <input type="checkbox" class="status-checkbox" value="active" id="c1"> 
         <span class="status-slider"></span>
     </label><br><br></br>
     <label for="department">Department:</label>

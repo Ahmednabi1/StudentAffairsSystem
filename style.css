@@ -9,14 +9,14 @@
 }
 
 .header1 {
-    margin: 80px 0 10px 0;
+    margin: 10px 0 10px 0;
     font-size: 40px;
     font-family: 'Montserrat', sans-serif;
     text-transform: uppercase;
-    text-shadow: 1px 1px 0px #333,
-    2px 2px 0px #444,
-    3px 3px 0px #555,
-    4px 4px 0px #666;
+    text-shadow: 1px 1px 0px #4CAF50,
+    2px 2px 0px #4CAF50,
+    3px 3px 0px #4CAF50,
+    4px 4px 0px #333;
     text-align: center;
 }
 
@@ -69,15 +69,10 @@
 
 /*________________________________table&cont________________________________________________________________*/
 
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-}
-
 table {
     width: 100%;
     border-collapse: collapse;
+    font-family: 'Montserrat';
     margin-top: 20px;
     background-color: #fff;
     box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.2);
@@ -94,8 +89,8 @@ td {
 }
 
 th {
-    background-color: #f5f5f5;
-    color: #333;
+    background-color: #4CAF50;
+    color: #fff;
     font-weight: bold;
     border-radius: 10px 10px 0 0;
 }
@@ -350,10 +345,17 @@ input[type="date"] {
     color: #333;
     font-weight: bold;
 }
+
+.unique-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
  
 /* Style for the container */
-#unique-container {
-    max-width: 800px;
+.container {
+    max-width: 1200px;
+    margin: 10% auto;
     background-color: #f2f2f2;
     border-radius: 20px;
     padding: 20px;
@@ -362,7 +364,6 @@ input[type="date"] {
     justify-content: center;
     align-items: center;
     box-shadow: 0px 0px 20px #333;
-    margin: 10% auto;
     text-align: center;
 }
 
@@ -398,19 +399,19 @@ input[type="date"] {
 }
  
 /* Style for the table */
-#StudentTableinSearch {
+#Search-table {
     border-collapse: collapse;
     width: 75%;
     text-align: center;
 }
  
-#StudentTableinSearch th,
-#StudentTableinSearch td {
+#Search-table th,
+#Search-table td {
     border: 1px solid #ddd;
     padding: 8px;
 }
  
-#StudentTableinSearch th {
+#Search-table th {
     background-color: #4CAF50;
     color: #fff;
 }
@@ -421,9 +422,6 @@ input[type="date"] {
 }
 
 /*________________________________Department Assignment________________________________________________________________*/
-body {
-    background-color: #333;
-  }
   
   #searchAndDepartH1 {
     color: #333;

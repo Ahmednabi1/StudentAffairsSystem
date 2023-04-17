@@ -4,7 +4,7 @@ function editStudent(id) {
 
     // id = Number(id);
 
-    // Find the student with the given id
+    // Find the student with the given
     var student = students.find(function (student) {
         return student.id === id; // Use strict equality operator
     });
@@ -13,7 +13,7 @@ function editStudent(id) {
     if (student) {
         // Populate the update form with the student data
         document.getElementById("studentName").value = student.name;
-        document.getElementById("studentId").value = student.ID;
+        document.getElementById("studentId").value = student.id;
         document.getElementById("gpa").value = student.GPA;
         document.getElementById("dob").value = student.birthDate;
         document.getElementById("gender").value = student.gender;
@@ -25,8 +25,17 @@ function editStudent(id) {
         document.getElementById("update-form").style.display = "block";
     }
 }
-
-
+// Function to edit a student in local storage by ID
+function updateStudentInLocalStorage(id, newStudent) {
+    var storedStudents = JSON.parse(localStorage.getItem("students")) || [];
+    var index = storedStudents.findIndex(function (student) {
+        return student.id === id;
+    });
+    if (index !== -1) {
+        storedStudents[index] = newStudent;
+        localStorage.setItem("students", JSON.stringify(storedStudents));
+    }
+}
 function updateStudent(event) {
     event.preventDefault(); // Prevent form submission
     var id = document.getElementById("studentId").value;
@@ -43,7 +52,7 @@ function updateStudent(event) {
     // Create a new student object with the updated data
     var updatedStudent = {
         name: name,
-        ID: id,
+        id: id,
         GPA: gpa,
         birthDate: dob,
         gender: gender,
@@ -93,32 +102,32 @@ function deleteStudent(id) {
 }
 
 document.getElementById("update-form").addEventListener("submit", updateStudent);
-// document.getElementById("table-body").addEventListener("click", function (event) {
-//     if (event.target && event.target.nodeName === "BUTTON") {
-//         var id = event.target.dataset.ID; // Use target instead of currentTarget
-//         var action = event.target.dataset.action;
-//         if (action === "edit") {
+document.getElementById("table-body").addEventListener("click", function (event) {
+    if (event.target && event.target.nodeName === "BUTTON") {
+        var id = event.target.dataset.id; // Use target instead of currentTarget
+        var action = event.target.dataset.action;
+        if (action === "edit") {
 
-//             // Call editStudent function to populate update form
-//             editStudent(id);
-//         } else if (action === "delete") {
-//             // Call deleteStudent function to delete student
-//             deleteStudent(id);
-//         }
-//     }
+            // Call editStudent function to populate update form
+            editStudent(id);
+        } else if (action === "delete") {
+            // Call deleteStudent function to delete student
+            deleteStudent(id);
+        }
+    }
 
-// });
+});
 
-// Function to show students in table
 function showStudentInTable() {
-    initializeStudentArray();
+    // Remove this function call
+    // initializeStudentArray();
     var students = JSON.parse(localStorage.getItem("students"));
     var tableBody = document.getElementById("table-body");
     tableBody.innerHTML = "";
     for (var i = 0; i < students.length; i++) {
         var row = document.createElement("tr");
         row.innerHTML = "<td>" + students[i].name + "</td>" +
-            "<td>" + students[i].ID + "</td>" +
+            "<td>" + students[i].id + "</td>" +
             "<td>" + students[i].GPA + "</td>" +
             "<td>" + students[i].birthDate + "</td>" +
             "<td>" + students[i].gender + "</td>" +
@@ -127,12 +136,11 @@ function showStudentInTable() {
             "<td>" + students[i].department + "</td>" +
             "<td>" + students[i].email + "</td>" +
             "<td>" + students[i].mobilePhone + "</td>" +
-            "<td><button data-id='" + students[i].ID + "' data-action='edit' onclick='editStudent(" + students[i].id + ")'><img alt='Edit' src='edit-button.png'></button></td>" +
-            "<td><button data-id='" + students[i].ID + "' data-action='delete' onclick='deleteStudent(" + students[i].id + ")'><img alt='Delete' src='garbage.png'></button></button></td>";
+            "<td><button data-id='" + students[i].id + "' data-action='edit'><img alt='Edit' src='edit-button.png'></button></td>" +
+            "<td><button data-id='" + students[i].id + "' data-action='delete'><img alt='Delete' src='garbage.png'></button></button></td>";
         tableBody.appendChild(row);
     }
 }
-
 function searchStudentById() {
     var searchId = document.getElementById("search-id").value; // Get the ID input value
     var table = document.getElementById("table-body"); // Get the table body element
@@ -156,11 +164,4 @@ function searchStudentById() {
     if (!found) {
         alert("Student with ID " + searchId + " not found.");
     }
-}
-function handleEditButtonClick(id) {
-    editStudent(id);
-}
-
-function handleDeleteButtonClick(id) {
-    deleteStudent(id);
 }

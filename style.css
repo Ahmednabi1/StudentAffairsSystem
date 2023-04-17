@@ -176,7 +176,7 @@ input:checked+.status-slider:before {
 /*________________________________backStyle________________________________________________________________*/
 
 body {
-    font-family: Georgia ;
+    font-family: 'Montserrat', sans-serif;
     background-color: #333;
     color: #FFFFFF;
 }
@@ -214,7 +214,7 @@ img.backgroundS {
     padding: 20px;
     width: 500px;
     margin: 0 auto;
-    font-family: Arial, sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-size: 16px;
     line-height: 1.5;
     color: black;
@@ -238,7 +238,7 @@ img.backgroundS {
 .addstudent{
     margin: 40px 0 10px 0;
     font-size: 40px;
-    font-family: "Arial Black";
+    font-family: 'Montserrat', sans-serif;
     text-transform: uppercase;
     text-shadow: 1px 1px 0px lightgrey,
     2px 2px 0px lightgrey,
@@ -435,8 +435,14 @@ input[type="date"] {
 }
  
 #Search-table th {
-    background-color: #4CAF50;
+    background-color: #333;
     color: #fff;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 12px;
+    text-align: left;
+    text-shadow: 1px 1px 0px #000000;
 }
 
 #noResults
@@ -464,7 +470,8 @@ input[type="date"] {
   #AssignDepartTable {
     border-collapse: collapse;
     margin: 0 auto;
-    width: 100%;
+    width: 75%;
+    text-align: center;
   }
   
   #AssignDepartTable th {

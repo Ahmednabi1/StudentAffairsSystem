@@ -19,12 +19,13 @@
     <meta charset="UTF-8">
     <title>Add Students</title>
 </head>
-<body style="background-color: white">
+<body>
+<img class="backgroundS" src="DisplayWall.jpg" alt="Books">
 <form>
 <div id="message">
     <div id="parent">
         <div id="key"  >
-            <h1 class="addstudent" style="font-family: 'Garamond'" >Add Student Page</h1>
+            <h1 class="addstudent" style="font-family: 'Montserrat'" >Add Student Page</h1>
             <label for="fname2">Student ID:         </label>
             <input type="text" id="fname2" name="fname2" placeholder="enter ID"><br><br>
             <label for="fname9"> Student Name:       </label>
@@ -58,10 +59,10 @@
                 <option value="IT">Information Technology</option>
                 <option value="DS">Data Science</option>
                 <option value="IS">Information Systems</option>
-            </select>
-            <label for="fname8">email:              </label>
+            </select><br><br>
+            <label for="fname8">Email:              </label>
             <input type="text" id="fname8" name="fname8" placeholder="enter the student email"><br><br>
-            <label for="phone number">mobile number:      </label>
+            <label for="phone number">Mobile number:      </label>
             <input type="text" id="phone number" name="phone number" placeholder="enter the phone number"><br><br>
 
             <button class="submit" onclick="if (validateForm()) { setStudentValues(); }">Create Student</button>

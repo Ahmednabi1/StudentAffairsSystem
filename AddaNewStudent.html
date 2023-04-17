@@ -1,4 +1,4 @@
--<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <link rel="stylesheet" href="style.css">
@@ -27,9 +27,9 @@
             <h1 class="addstudent" style="font-family: 'Garamond'" >Add Student Page</h1>
             <label for="fname2">Student ID:         </label>
             <input type="text" id="fname2" name="fname2" placeholder="enter ID"><br><br>
-            <label for="fname"> Student Name:       </label>
+            <label for="fname9"> Student Name:       </label>
             <input type="text" id="fname9" name="fname9" placeholder="enter student name"><br><br>
-            <label for="fname"> Student GPA:        </label>
+            <label for="fname3"> Student GPA:        </label>
             <input type="text" id="fname3" name="fname3" placeholder="enter the GPA"><br><br>
             <label id="date" for="dob">Date of Birth:</label>
             <input type="date" id="dob" name="dob"><br><br>
@@ -46,7 +46,7 @@
                 <option value="3">3</option>
                 <option value="4">4</option>
             </select>
-            <label for="fname">Status:             </label>
+            <label for="c1">Status:             </label>
             <label class="status-switch">
                 <input type="checkbox" class="status-checkbox" value="active" id="c1">
                 <span class="status-slider"></span>
@@ -59,10 +59,10 @@
                 <option value="DS">Data Science</option>
                 <option value="IS">Information Systems</option>
             </select>
-            <label for="fname">email:              </label>
+            <label for="fname8">email:              </label>
             <input type="text" id="fname8" name="fname8" placeholder="enter the student email"><br><br>
-            <label for="fname">mobile number:      </label>
-            <input type="text" id="frame9" name="fname9" placeholder="enter the phone number"><br><br>
+            <label for="fname10">mobile number:      </label>
+            <input type="text" id="fname10" name="fname10" placeholder="enter the phone number"><br><br>
 
             <button class="submit" onclick="setStudentValues()">Create Student</button>
         </div>
@@ -70,5 +70,6 @@
     <script>
         console.log(retrieveStudentFromLocalStorageByName("ahmed ezzat"));
     </script>
+</div>
 </body>
 </html>

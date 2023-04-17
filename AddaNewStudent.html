@@ -20,7 +20,7 @@
     <title>Add Students</title>
 </head>
 <body style="background-color: white">
-
+<form>
 <div id="message">
     <div id="parent">
         <div id="key"  >
@@ -31,7 +31,7 @@
             <input type="text" id="fname9" name="fname9" placeholder="enter student name"><br><br>
             <label for="fname3"> Student GPA:        </label>
             <input type="text" id="fname3" name="fname3" placeholder="enter the GPA"><br><br>
-            <label id="date" for="dob">Date of Birth:</label>
+            <label for="dob">Date of Birth:</label>
             <input type="date" id="dob" name="dob"><br><br>
             <label for="gender">Gender             :</label>
 
@@ -65,9 +65,10 @@
             <input type="text" id="phone number" name="phone number" placeholder="enter the phone number"><br><br>
 
             <button class="submit" onclick="setStudentValues()">Create Student</button>
+            <div id="warning-message"></div>
         </div>
     </div>
 </div>
-
+</form>
 </body>
 </html>

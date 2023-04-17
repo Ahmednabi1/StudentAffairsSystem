@@ -50,13 +50,13 @@ function setStudentValues() {
     var id = document.getElementById("fname2").value;
     var name = document.getElementById("fname9").value;
     var gpa = document.getElementById("fname3").value;
-    var dob = document.getElementById("dob").value;
+    var dob = document.getElementById("date").value;
     var gender = document.getElementById("gender").value;
     var level = document.getElementById("student-level").value;
     var status = getStatus();
     var department = document.getElementById("department").value;
     var email = document.getElementById("fname8").value;
-    var mobile = document.getElementById("fname9").value;
+    var mobile = document.getElementById("phone number").value;
     var newStudent = new Student(name, id, gpa, dob, gender, level, status, department, email, mobile);
     addStudentToLocalStorage(newStudent);
     showMessage("Registeration was a Success!");

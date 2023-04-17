@@ -1,7 +1,7 @@
      /* Select the body element and set its font family and margin */
      body {
-         font-family: Arial, sans-serif;
-         margin: 20px;
+        font-family: 'Montserrat';
+        margin: 20px;
      }
 
      /* Select the input element and set its width and padding */

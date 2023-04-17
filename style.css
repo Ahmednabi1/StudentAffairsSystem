@@ -8,21 +8,22 @@
     font-size: 50px;
 }
 
-h1 {
+.header1 {
     margin: 80px 0 10px 0;
     font-size: 40px;
     font-family: 'Montserrat', sans-serif;
     text-transform: uppercase;
-    text-shadow: 1px 1px 0px black,
-    2px 2px 0px black,
-    3px 3px 0px black,
-    4px 4px 0px black;
+    text-shadow: 1px 1px 0px #333,
+    2px 2px 0px #444,
+    3px 3px 0px #555,
+    4px 4px 0px #666;
     text-align: center;
 }
 
 /*______________________________________navigation_bar_________________________________________________________*/
 
 .topnav {
+    font-family: 'Montserrat';
     border-radius: 10px;
     border: 1px solid #222831;
     position: fixed;
@@ -302,3 +303,190 @@ input[type="date"] {
     outline: none;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
+
+/*________________________________Search________________________________________________________________*/
+
+/* Style for the body */
+#Search-Body {
+    background-color: #333;
+    color: #fff;
+    font-family: 'Montserrat';
+    font-size: 16px;
+}
+ 
+/* Style for the top navigation bar */
+#Search-TopNav {
+    background-color: #333;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+ 
+#Search-TopNav a {
+    float: left;
+    display: block;
+    color: #fff;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+ 
+#Search-TopNav label {
+    float: left;
+    display: block;
+    color: #fff;
+    text-align: center;
+    padding: 14px 16px;
+    font-size: 20px;
+    font-weight: bold;
+}
+ 
+#Search-TopNav a:hover {
+    background-color: #ddd;
+    color: #333;
+}
+ 
+#Search-TopNav a.active {
+    background-color: #ddd;
+    color: #333;
+    font-weight: bold;
+}
+ 
+/* Style for the container */
+#unique-container {
+    max-width: 800px;
+    background-color: #f2f2f2;
+    border-radius: 20px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 0px 20px #333;
+    margin: 10% auto;
+    text-align: center;
+}
+
+/* Style for the search box */
+#Search-box {
+    text-align: center;
+    margin-bottom: 20px;
+    width: 75%;
+    background:#ddd;
+}
+ 
+#SEARCH_NAME {
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    font-size: 16px;
+    margin-right: 10px;
+    width: 60%;
+}
+ 
+#Search-box button {
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    background-color: #4CAF50;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+}
+ 
+#Search-box button:hover {
+    background-color: #3e8e41;
+}
+ 
+/* Style for the table */
+#StudentTableinSearch {
+    border-collapse: collapse;
+    width: 75%;
+    text-align: center;
+}
+ 
+#StudentTableinSearch th,
+#StudentTableinSearch td {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+ 
+#StudentTableinSearch th {
+    background-color: #4CAF50;
+    color: #fff;
+}
+
+#noResults
+{
+    color: red;
+}
+
+/*________________________________Department Assignment________________________________________________________________*/
+body {
+    background-color: #333;
+  }
+  
+  #searchAndDepartH1 {
+    color: #333;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 0px #000000;
+  }
+
+  #searchAndDepartH3{
+    color: #333;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  #AssignDepartTable {
+    border-collapse: collapse;
+    margin: 0 auto;
+    width: 100%;
+  }
+  
+  #AssignDepartTable th {
+    background-color: #333;
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 12px;
+    text-align: left;
+    text-shadow: 1px 1px 0px #000000;
+  }
+  
+  #AssignDepartTable td {
+    border: 1px solid #ddd;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  #Departments {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    margin: 0;
+    padding: 5px;
+    font-weight: bold;
+  }
+  
+  #saveDepartmentButton {
+    background-color: #333;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    margin-top: 20px;
+    padding: 12px 24px;
+    text-align: center;
+    text-decoration: none;
+    text-shadow: 1px 1px 0px #000000;
+    display: block;
+    margin: 0 auto;
+  }
+  

@@ -3,74 +3,26 @@ function searchForStudentsByName() {
     var students = retrieveStudentFromLocalStorageByName(inputName);
     
     if (students.length === 0) {
-        alert("There is no student with that name.");
+        showNoResultMessage();
         return false;
     }
-
+    
     var activeStudents = students.filter(function(student) {
         return student.status === "active";
     });
 
     return activeStudents;
-
-    /*showStudent(activeStudents);*/
 }
-/*
-
-function clearTable(table)
-{
-    for(var i = 1;i<table.rows.length;){
-        table.deleteRow(i);
-    }
-}
-
-function showStudent(activeStudents)
-{
-    const table = document.getElementById("StudentTableinSearch");
-    clearTable(table);
-
-    activeStudents.forEach(function(student) {
-
-        const row = table.insertRow();
-        // Create a new cell for each property of the object you want to display
-        const nameCell = row.insertCell();
-        const IDCell = row.insertCell();
-        const lvlCell = row.insertCell();
-        const departCell = row.insertCell();
-      
-        // Insert the value of each property into the corresponding cell
-        IDCell.textContent = student.ID;
-        nameCell.textContent = student.name;
-        lvlCell.textContent = student.level;
-
-        if (student.level >= 3) {
-            const anchor = document.createElement("a");
-            if (student.department == ""){
-                anchor.textContent = "Click Here to Assign Your Department";
-            }
-            else
-            {
-                anchor.textContent = student.department;
-            }
-            anchor.href = "DepartmentAssignment.html";
-            anchor.target = "_blank"; // Opens the link in a new tab or window
-            anchor.onclick = function() {
-               openDepartmentAssignmentPage(student.ID);
-            };
-            departCell.appendChild(anchor);
-          } else {
-            departCell.textContent = student.department;
-          }
-          
-    });
-} */
 
 function displaySearchResults() {
 
     let searchResults = searchForStudentsByName();
 
-    const searchTable = document.getElementById("SearchResultsTable");
+    const searchTable = document.getElementById("Search-table");
+    console.log(searchTable + ' type of table -> ' + typeof(searchTable));
+    //const tbody = searchTable.getElementsByTagName("tbody")[0];
     const tbody = searchTable.getElementsByTagName("tbody")[0];
+    
     tbody.innerHTML = "";
   
     for (let i = 0; i < searchResults.length; i++) {
@@ -102,5 +54,15 @@ function displaySearchResults() {
       }      
     }
 }
-  
-//refresh Search Table after assignment
+
+function showNoResultMessage()
+{
+    var message = document.getElementById("noResults");
+    message.textContent = "There is no student with that name!";
+    message.style.opacity = "1";
+
+        // Fade out the message after 3 seconds
+        setTimeout(function() {
+            message.style.opacity = "0";
+        }, 1500);
+}

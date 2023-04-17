@@ -1,30 +1,32 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<link rel= "stylesheet" href="style.css">
+   <link rel="stylesheet" href="style.css">
    <script src="ourScript.js"></script>
    <script src="Search.js"></script>
+   <title>Search for a Student</title>
+</head>
+<body id="Search-Body">
    <div class="topnav">
       <label>Students Affairs</label>
-		<a href="HomePage.html">Home</a>
-		<a href="AddaNewStudent.html">Add a New Student</a>
-		<a href="DisplayAllStudents.html">Display all Students</a>
-		<a href="Update.html">Update Student's Info</a>
-		<a class="active" href="Search.html">Search For a Student</a>
+      <a href="HomePage.html">Home</a>
+      <a href="AddaNewStudent.html">Add a New Student</a>
+      <a href="DisplayAllStudents.html">Display all Students</a>
+      <a href="Update.html">Update Student's Info</a>
+      <a class="active" href="Search.html">Search For a Student</a>
    </div>
-   <br><br>
 
-</head>
-<body>
-   <div class="container">
-      <h1>Search For a Student</h1>
+   <div id="unique-container">
+      <h1 id="searchAndDepartH1">Search For Active Students</h1>
+      <div id="Search-box">
+         <h3 id="searchAndDepartH3">Enter student Name</h3>
+         <input type="text" placeholder="Search.." id="SEARCH_NAME">
+         <button onclick="displaySearchResults()">Search</button>
+         <div id="noResults" ></div>
+      </div>
 
-      <H3>Enter student Name</H3>
-      <input type="text" placeholder="Search.." id="SEARCH_NAME">
-      <button onclick="displaySearchResults()">Search</button>
-      <br><br>
 
-      <table id="StudentTableinSearch">
+      <table id="Search-table">
          <thead>
             <tr>
                <th>Name</th>
@@ -36,7 +38,8 @@
          <tbody>
          </tbody>
       </table>
+   </div>
+   </div>
 
 </body>
-
 </html>

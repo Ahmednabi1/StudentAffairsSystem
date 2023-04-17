@@ -2,43 +2,43 @@
 <html>
 <head>
 	<title>Assign Your Department</title>
-	<link rel= "stylesheet" href="style.css">
+	<link rel="stylesheet" href="style.css">
 	<script src="ourScript.js"></script>
 	<script src="DepartAssign.js"></script>
 </head>
 <body>
-	<div class="container">
+	<div id="unique-container">
 
-<h2>Department Assignment</h2>
+		<h1 id="searchAndDepartH1">Department Assignment</h1>
 
-<table id ="AssignDepartTable">
-	<thead>
-		<tr>
-			<th>Student ID</th>
-			<th>Student Name</th>
-			<th>Department</th>
-		</tr>
-	</thead>
+		<table id="AssignDepartTable">
+			<thead>
+				<tr>
+					<th>Student ID</th>
+					<th>Student Name</th>
+					<th>Department</th>
+				</tr>
+			</thead>
 
-	<tr id="StudentRowinAssignDepartment">
-	<td id="StdIDAssignDepart"><b></b></td>
-<td id="StdNameAssignDepart"></td>
-<td>
+			<tr id="StudentRowinAssignDepartment">
+				<td id="StdIDAssignDepart"><b></b></td>
+				<td id="StdNameAssignDepart"></td>
+				<td>
+					<select name="Departments" id="Departments">
+						<option value="IS">IS</option>
+						<option value="AI">AI</option>
+						<option value="CS">CS</option>
+						<option value="DS">DS</option>
+						<option value="IT">IT</option>
+					</select>
+				</td>
+			</tr>
+		</table>
 
+		<br><br>
 
-<select departName="Departments" id="Departments">
-<option value="IS">IS</option>
-<option value="AI">AI</option>
-<option value="CS">CS</option>
-<option value="DS">DS</option>
-<option value="IT">IT</option>
-</select>
-</td>
-</tr>
-</table>
-<br><br>
-<button id="saveDepartmentButton">Save</button>
+		<button id="saveDepartmentButton">Save</button>
 
+	</div>
 </body>
 </html>
-

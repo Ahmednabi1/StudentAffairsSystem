@@ -4,7 +4,7 @@
 <head>
     <title>Update Student</title>
 
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css">0
     <link rel="stylesheet" href="update.css">
 
     <div class="topnav">
@@ -44,9 +44,10 @@
 
 
 
-        data1 = JSON.parse(localStorage.getItem("students"));
+
         // Add an event listener to the window object for the beforeunload event
         window.addEventListener("beforeunload", function () {
+            data1 = JSON.parse(localStorage.getItem("students"));
             // Loop over the data array
             for (var i = 0; i < data1.length; i++) {
                 // Change the property name of each object from id to ID

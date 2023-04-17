@@ -50,16 +50,24 @@ function setStudentValues() {
     var id = document.getElementById("fname2").value;
     var name = document.getElementById("fname9").value;
     var gpa = document.getElementById("fname3").value;
-    var dob = document.getElementById("date").value;
+    var dob = document.getElementById("dob").value;
     var gender = document.getElementById("gender").value;
     var level = document.getElementById("student-level").value;
     var status = getStatus();
     var department = document.getElementById("department").value;
     var email = document.getElementById("fname8").value;
     var mobile = document.getElementById("phone number").value;
+
+    // Check if the student ID already exists in local storage
+    if (checkIfStudentIDExists(id)) {
+        // Display a warning message if the ID already exists
+        showMessage("Student with this ID already exists!");
+        return;
+    }
+
     var newStudent = new Student(name, id, gpa, dob, gender, level, status, department, email, mobile);
     addStudentToLocalStorage(newStudent);
-    showMessage("Registeration was a Success!");
+    showMessage("Registration was a Success!");
 }
 
 // Function to add a student to local storage
@@ -91,7 +99,13 @@ function retrieveStudentFromLocalStorageByID(id) {
 function checkIfStudentIDExists(id) {
     var matchingStudents = retrieveStudentFromLocalStorageByID(id);
     if (matchingStudents.length > 0) {
-        document.getElementById("warning-message").innerHTML = "Student with this ID already exists!";
+        var warningMessage = document.getElementById("warning-message");
+        if (warningMessage !== null) {
+            warningMessage.innerHTML = "Student with this ID already exists!";
+            alert("This is id already exists !");
+        } else {
+            console.error("warning-message element not found");
+        }
         return true;
     }
     else {

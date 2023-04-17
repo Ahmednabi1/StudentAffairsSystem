@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <link rel="stylesheet" href="style.css">
     <script src="Display.js"></script>
@@ -18,7 +17,7 @@
 
 </head>
 
-<body>
+<body onload="displayStudentsInTable()">
 
     <img class="backgroundS" src="DisplayWall.jpg" alt="Books">
 
@@ -29,37 +28,19 @@
                 <tr>
                     <th>Name</th>
                     <th>ID</th>
-                    <th>Date of Birth</th>
                     <th>GPA</th>
+                    <th>Date of Birth</th>
                     <th>Gender</th>
                     <th>Level</th>
+                    <th>Phone Number</th>
                     <th>Department</th>
                     <th>Email</th>
-                    <th>Phone Number</th>
                     <th>Status</th>
                 </tr>
             </thead>
-            <tbody>
-                <!--Ahmed's Info-->
-                <tr>
-                    <td>Ahmed Nabil</td>
-                    <td>20210043</td>
-                    <td>26/9/2003</td>
-                    <td>3.5</td>
-                    <td>Male</td>
-                    <td>Junior</td>
-                    <td>Information Technology</td>
-                    <td>Ahmed@gmail.com</td>
-                    <td>01234567890</td>
-                    <td>
-                        <label class="status-switch">
-                            <input type="checkbox" class="status-checkbox" value="active"> 
-                            <span class="status-slider"></span>
-                        </label>
-                    </td>
-                </tr>
-            </tbody>
         </table>
+        
+    </div>
 </body>
 
-</html>
+</html> 

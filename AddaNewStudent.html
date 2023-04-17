@@ -3,7 +3,7 @@
 <head>
     <link rel="stylesheet" href="style.css">
     <script src="ourScript.js"></script>
-
+    <script src="validation.js"></script>
 
     <div class="topnav">
         <label>Students Affairs</label>
@@ -64,7 +64,7 @@
             <label for="phone number">mobile number:      </label>
             <input type="text" id="phone number" name="phone number" placeholder="enter the phone number"><br><br>
 
-            <button class="submit" onclick="setStudentValues()">Create Student</button>
+            <button class="submit" onclick="if (validateForm()) { setStudentValues(); }">Create Student</button>
             <div id="warning-message"></div>
         </div>
     </div>
@@ -72,3 +72,4 @@
 </form>
 </body>
 </html>
+<!-- <button class="submit" onclick="if (validateForm()) { setStudentValues(); }">Create Student</button> -->

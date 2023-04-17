@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="style.css">
+        <script src="ourScript.js"></script>
+
+
+    <div class="topnav">
+        <label>Students Affairs</label>
+        <a href="HomePage.html">Home</a>
+        <a class="active" href="AddaNewStudent.html">Add a New Student</a>
+        <a href="DisplayAllStudents.html">Display all Students</a>
+        <a href="Update.html">Update Student's Info</a>
+        <a href="Search.html">Search For a Student</a>
+    </div>
+    <br><br>
+
+
+    <meta charset="UTF-8">
+    <title>Add Students</title>
+</head>
+<body style="background-color: white">
+
+<div id="message">
+<div id="parent">
+<div id="key"  >
+    <h1 class="addstudent" style="font-family: 'Garamond'" >Add Student Page</h1>
+    <label for="fname2">Student ID:         </label>
+    <input type="text" id="fname2" name="fname2" placeholder="enter ID"><br><br>
+    <label for="fname"> Student Name:       </label>
+    <input type="text" id="fname9" name="fname9" placeholder="enter student name"><br><br>
+    <label for="fname"> Student GPA:        </label>
+    <input type="text" id="fname3" name="fname3" placeholder="enter the GPA"><br><br>
+    <label id="date" for="dob">Date of Birth:</label>
+    <input type="date" id="dob" name="dob"><br><br>
+    <label for="gender">Gender             :</label>
+
+    <select name="gender" id="gender">
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+    </select><br><br>
+    <label for="student-level">Student Level:</label>
+    <select id="student-level" name="student-level">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+    </select>
+    <label for="fname">Status:             </label>
+    <label class="status-switch">
+        <input type="checkbox" class="status-checkbox" value="active" id="c1"> 
+        <span class="status-slider"></span>
+    </label><br><br></br>
+    <label for="department">Department:</label>
+    <select id="department" name="department">
+        <option value="AI">Artificial Intelligence</option>
+        <option value="CS">Computer Science</option>
+        <option value="IT">Information Technology</option>
+        <option value="DS">Data Science</option>
+        <option value="IS">Information Systems</option>
+    </select>
+    <label for="fname">email:              </label>
+    <input type="text" id="fname8" name="fname8" placeholder="enter the student email"><br><br>
+    <label for="fname">mobile number:      </label>
+    <input type="text" id="frame9" name="fname9" placeholder="enter the phone number"><br><br>
+
+    <button class="submit" onclick="setStudentValues()">Create Student</button>
+</div>
+</div>
+<script>
+    console.log(retrieveStudentFromLocalStorageByName("ahmed ezzat"));
+</script>
+</body>
+</html>

@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}My Website{% endblock %}
+
+{% block content %}
+    <link rel="stylesheet" href="{% static 'CSS/cover.css' %}">
+    <div class="banner"></div>
+    <div class="content">
+        <h1>Welcome.</h1>
+        <p>Choose the website you like to process</p>
+        <button type="button"><span></span>Human Resources</a></button>
+        <button type="button"><span></span><a href="/home">Students Affairs</a></button>
+        <button type="button"><span></span>Higher Studies</a></button>
+        <button type="button"><span></span>Laboratory Tracking</a></button>
+    </div>
+{% endblock %}

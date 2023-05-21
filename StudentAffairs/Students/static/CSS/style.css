@@ -1,0 +1,520 @@
+.special {
+
+    background-image: linear-gradient(to right, #553c9a, #ee4b2b, #00c2cb, #ff7f50, #553c9a);
+    color: lavender;
+    background-clip: text;
+    -webkit-background-clip: text;
+    text-align: center;
+    font-size: 50px;
+}
+
+.header1 {
+    margin: 10px 0 10px 0;
+    font-size: 40px;
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    text-shadow: 1px 1px 0px #4CAF50,
+    2px 2px 0px #4CAF50,
+    3px 3px 0px #4CAF50,
+    4px 4px 0px #333;
+    text-align: center;
+}
+
+.Header1{
+    margin: 80px 0 10px 0;
+    font-size: 40px;
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    text-shadow: 1px 1px 0px black,
+    2px 2px 0px black,
+    3px 3px 0px black,
+    4px 4px 0px black;
+    text-align: center;
+}
+
+/*______________________________________navigation_bar_________________________________________________________*/
+
+.topnav {
+    font-family: 'Montserrat';
+    border-radius: 10px;
+    border: 1px solid #222831;
+    position: fixed;
+    background-color: #333;
+    overflow: hidden;
+    width: 100%;
+    height: auto;
+    top: 0px;
+    left: 0px;
+}
+
+.topnav a {
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 16px 20px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+
+.topnav label {
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 20px;
+    text-decoration: none;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.topnav a:hover {
+    background-color: #ddd;
+    color: #09bec6;
+}
+
+.topnav a.active {
+    color: #FFFFFF;
+    background-color: #4b4a4a;
+    border-radius: 3px;
+
+}
+
+/*________________________________table&cont________________________________________________________________*/
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: #fff;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+  }
+  
+  th,
+  td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+    color: #666;
+    border-radius: 0;
+  }
+  
+  th {
+    background-color: #f5f5f5;
+    color: #333;
+    font-weight: bold;
+    border-radius: 10px 10px 0 0;
+  }
+  
+  tr:last-child td {
+    border-bottom: none;
+  }
+  
+  table tr:first-child {
+    background-color: #fff;
+  }
+  
+  table tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  
+  table tr:nth-child(even) td,
+  table tr:nth-child(odd) td {
+    border-radius: 0 0 5px 5px;
+  }
+
+
+
+/*________________________________Switch________________________________________________________________*/
+
+.status-switch {
+    position: relative;
+    display: inline-block;
+    width: 40px;
+    height: 20px;
+    margin-right: 10px;
+}
+
+.status-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.status-slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: red;
+    transition: 0.4s;
+    border-radius: 20px;
+}
+
+.status-slider:before {
+    position: absolute;
+    content: "";
+    height: 16px;
+    width: 16px;
+    left: 2px;
+    bottom: 2px;
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 50%;
+}
+
+input:checked+.status-slider {
+    background-color: green;
+}
+
+input:checked+.status-slider:before {
+    transform: translateX(20px);
+}
+
+/*________________________________backStyle________________________________________________________________*/
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #333;
+    color: #FFFFFF;
+}
+
+img.background {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    -webkit-filter: blur(5px);
+    filter: blur(5px);
+}
+
+img.backgroundS {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+}
+
+.header h2 {
+    text-align: center;
+}
+/*________________________________addStud________________________________________________________________*/
+
+#key{
+
+    background-color: #f8f1e9;
+    border: 1px solid #d3c0a7;
+    box-shadow: 3px 3px 5px #b9a88e;
+    padding: 20px;
+    width: 500px;
+    margin: 0 auto;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    color: black;
+    box-shadow: -10px 0 50px -10px black, 10px 0 10px -50px black;
+
+
+}
+#parent{
+    margin: auto;
+    width: fit-content;
+    top: 50%;
+
+
+
+}
+/* label{
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+} */
+.addstudent{
+    margin: 40px 0 10px 0;
+    font-size: 40px;
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    text-shadow: 1px 1px 0px lightgrey,
+    2px 2px 0px lightgrey,
+    3px 3px 0px lightgrey,
+    4px 4px 0px lightgrey;
+    text-align: center;
+    color: black;
+}
+input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #b9a88e;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    font-size: 16px;
+    line-height: 1.5;
+    box-sizing: border-box;
+    border-radius: 20px;
+
+
+}
+.submit{
+    background-color: #d3c0a7;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+
+}
+.submit:hover {
+    background-color: #b9a88e;
+}
+.date{
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+
+}
+input[type="date"] {
+    padding: 8px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    font-size: 16px;
+    width: 50%;
+    border-radius: 25px;
+
+}
+#student-level{
+    font-size: 1.2em;
+    padding: 5px;
+    width: 150px;
+}
+#department{
+    font-size: 16px;
+    color: #333;
+    background-color: #f2f2f2;
+    border: none;
+    border-radius: 3px;
+    padding: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+#department:hover{
+    background-color: #e6e6e6;
+}
+#department:focus {
+    outline: none;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/*________________________________Search________________________________________________________________*/
+
+/* Style for the body */
+#Search-Body {
+    background-color: #333;
+    color: #fff;
+    font-family: 'Montserrat';
+    font-size: 16px;
+}
+ 
+/* Style for the top navigation bar */
+#Search-TopNav {
+    background-color: #333;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+ 
+#Search-TopNav a {
+    float: left;
+    display: block;
+    color: #fff;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+ 
+#Search-TopNav label {
+    float: left;
+    display: block;
+    color: #fff;
+    text-align: center;
+    padding: 14px 16px;
+    font-size: 20px;
+    font-weight: bold;
+}
+ 
+#Search-TopNav a:hover {
+    background-color: #ddd;
+    color: #333;
+}
+ 
+#Search-TopNav a.active {
+    background-color: #ddd;
+    color: #333;
+    font-weight: bold;
+}
+
+.unique-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+ 
+
+.display-container {
+    max-width: 1200px;
+    background-color: #f2f2f2;
+    padding: 20px;
+    align-items: center;
+    text-align: center;
+    margin: 0 auto;
+    justify-content: center;
+    border-radius: 20px;
+}
+
+/* Style for the container */
+.container {
+    max-width: 1200px;
+    margin: 10% auto;
+    background-color: #f2f2f2;
+    border-radius: 20px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 0px 20px #333;
+    text-align: center;
+}
+
+/* Style for the search box */
+#Search-box {
+    text-align: center;
+    margin-bottom: 20px;
+    width: 75%;
+    background:#ddd;
+}
+ 
+#SEARCH_NAME {
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    font-size: 16px;
+    margin-right: 10px;
+    width: 60%;
+}
+ 
+#Search-box button {
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    background-color: #4CAF50;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+}
+ 
+#Search-box button:hover {
+    background-color: #3e8e41;
+}
+ 
+/* Style for the table */
+#Search-table {
+    border-collapse: collapse;
+    width: 75%;
+    text-align: center;
+}
+ 
+#Search-table th,
+#Search-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+ 
+#Search-table th {
+    background-color: #333;
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 12px;
+    text-align: left;
+    text-shadow: 1px 1px 0px #000000;
+}
+
+#noResults
+{
+    color: red;
+}
+
+/*________________________________Department Assignment________________________________________________________________*/
+  
+  #searchAndDepartH1 {
+    color: #333;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 0px #000000;
+  }
+
+  #searchAndDepartH3{
+    color: #333;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  #AssignDepartTable {
+    border-collapse: collapse;
+    margin: 0 auto;
+    width: 75%;
+    text-align: center;
+  }
+  
+  #AssignDepartTable th {
+    background-color: #333;
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 12px;
+    text-align: left;
+    text-shadow: 1px 1px 0px #000000;
+  }
+  
+  #AssignDepartTable td {
+    border: 1px solid #ddd;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  #Departments {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    margin: 0;
+    padding: 5px;
+    font-weight: bold;
+  }
+  
+  #saveDepartmentButton {
+    background-color: #333;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    margin-top: 20px;
+    padding: 12px 24px;
+    text-align: center;
+    text-decoration: none;
+    text-shadow: 1px 1px 0px #000000;
+    display: block;
+    margin: 0 auto;
+  }
+  

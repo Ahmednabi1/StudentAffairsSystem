@@ -1,0 +1,31 @@
+<!-- search.html -->
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Search For a Student{% endblock %}
+
+{% block content %}
+<!-- Content for the search page -->
+<script src="{% static 'js/Search.js' %}"></script>
+<h1 class="Header1">Search For Active Students</h1>
+<div class="container"> 
+<div id="Search-box">
+    <h3 id="searchAndDepartH3">Enter student Name</h3>
+    <input type="text" placeholder="Search.." id="SEARCH_NAME">
+    <button onclick="displaySearchResults()">Search</button>
+    <div id="noResults"></div>
+</div>
+
+<table id="Search-table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>NAME</th>
+            <th>Level</th>
+            <th>Department</th>
+        </tr>
+    </thead>
+    <tbody>
+    </tbody>
+</table>
+{% endblock %}

@@ -1,0 +1,31 @@
+<!-- DisplayAllStudents.html -->
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Display All Students{% endblock %}
+
+{% block content %}
+<!-- Content for the search page -->
+<script src="{% static 'js/Display.js' %}"></script>
+
+    <div class="unique-container" onload="displayStudentsInTable()">
+        <h1 class="Header1">Active/Inactive Students</h1>
+        <table id="tb">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>ID</th>
+                    <th>GPA</th>
+                    <th>Date of Birth</th>
+                    <th>Gender</th>
+                    <th>Level</th>
+                    <th>Phone Number</th>
+                    <th>Department</th>
+                    <th>Email</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+        </table>
+        
+    </div>
+{% endblock %}

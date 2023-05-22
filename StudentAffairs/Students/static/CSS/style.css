@@ -8,17 +8,6 @@
     font-size: 50px;
 }
 
-.header1 {
-    margin: 10px 0 10px 0;
-    font-size: 40px;
-    font-family: 'Montserrat', sans-serif;
-    text-transform: uppercase;
-    text-shadow: 1px 1px 0px #4CAF50,
-    2px 2px 0px #4CAF50,
-    3px 3px 0px #4CAF50,
-    4px 4px 0px #333;
-    text-align: center;
-}
 
 .Header1{
     margin: 80px 0 10px 0;
@@ -30,6 +19,7 @@
     3px 3px 0px black,
     4px 4px 0px black;
     text-align: center;
+    margin-bottom: 10px;
 }
 
 /*______________________________________navigation_bar_________________________________________________________*/
@@ -377,8 +367,8 @@ input[type="date"] {
 
 /* Style for the container */
 .container {
-    max-width: 1200px;
-    margin: 10% auto;
+    max-width: 100px;
+    margin: 0 auto;
     background-color: #f2f2f2;
     border-radius: 20px;
     padding: 20px;
@@ -388,6 +378,7 @@ input[type="date"] {
     align-items: center;
     box-shadow: 0px 0px 20px #333;
     text-align: center;
+    box-sizing: border-box;
 }
 
 /* Style for the search box */
@@ -396,6 +387,12 @@ input[type="date"] {
     margin-bottom: 20px;
     width: 75%;
     background:#ddd;
+}
+
+input[type="text"] {
+    padding: 8px;
+    width: 250px;
+    border: 1px solid #ccc;
 }
  
 #SEARCH_NAME {
@@ -408,13 +405,14 @@ input[type="date"] {
 }
  
 #Search-box button {
-    padding: 10px 20px;
+    /* padding: 10px 20px; */
     border-radius: 5px;
     border: none;
-    background-color: #4CAF50;
     color: #fff;
     font-size: 16px;
     cursor: pointer;
+    padding: 8px 15px;
+    background-color: #4CAF50;
 }
  
 #Search-box button:hover {
@@ -448,6 +446,8 @@ input[type="date"] {
 #noResults
 {
     color: red;
+    font-weight: bold;
+    margin-top: 10px;
 }
 
 /*________________________________Department Assignment________________________________________________________________*/
@@ -517,4 +517,100 @@ input[type="date"] {
     display: block;
     margin: 0 auto;
   }
-  
+  /*________________________________Update________________________________________________________________*/
+
+.update {
+    font-family: 'Montserrat';
+    margin: 20px;
+}
+
+.update img {
+    width: 25px;
+    height: 25px;
+    font-size: 100px;
+    color: blue;
+}
+
+.update button {
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.update input {
+    width: 200px;
+    padding: 5px;
+}
+
+.update table
+{
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.update th,td {
+    padding: 10px;
+    text-align: left;
+}
+
+.update th {
+    background-color: #4CAF50;
+    color: #fff;
+}
+
+.update tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.update tr:hover {
+    background-color: #ddd;
+}
+
+.update form {
+    width: 500px;
+    margin: 20px auto;
+    border: 1px solid black;
+}
+
+.update form h1 {
+    text-align: center;
+}
+
+
+.searchUpdate {
+    display: flex;
+    align-items: center;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 10px;
+}
+
+.searchUpdate input[type=text] {
+    padding: 10px;
+    font-size: 17px;
+    border: 2px solid #132666;
+    flex: 1;
+    background: #fff;
+    border-radius: 50px 0 0 50px;
+}
+
+.searchUpdate button {
+    width: 20%;
+    padding: 10px;
+    background: rgb(46, 45, 45);
+    color: white;
+    font-size: 17px;
+    border: none;
+    border-radius: 0 50px 50px 0;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.searchUpdate button:hover {
+    background-color: #141415;
+}
+
+.searchUpdate button img {
+    width: 18px;
+    height: 18px;
+}

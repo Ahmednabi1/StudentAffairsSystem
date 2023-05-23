@@ -2,13 +2,14 @@
 
 {% extends 'base.html' %}
 {% load static %}
+{% csrf_token %}
 
 {% block title %}Add a New Student{% endblock %}
 
 {% block content %}
 <!-- Content for the adding new Students page -->
 <script src="{% static 'js/ourScript.js' %}"></script>
-<form>
+<form action="{% url 'add_student' %}" method="POST">
 <div id="message">
     <div id="parent">
         <div id="key"  >
@@ -59,3 +60,4 @@
 </div>
 </form>
 {% endblock %}
+

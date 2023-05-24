@@ -105,6 +105,7 @@ def get_student_data(request, student_id):
     }
     return JsonResponse(student_data)
 
+
 @csrf_exempt
 def update_student(request, student_id):
     if request.method == 'PUT':

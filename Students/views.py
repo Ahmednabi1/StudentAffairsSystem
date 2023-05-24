@@ -59,16 +59,14 @@ def update(request):
 
 @csrf_exempt
 def search(request):
-    if request.method == 'POST':
-        studentName = request.POST.get('SEARCH_NAME')
-        students = Student.objects.filter(name=studentName)
-        
-        context = {}
-        if len(students) != 0 or students != None:
-            context = {'students': students}
-        return render(request, 'Search.html', context)
-    
-    return render(request, 'Search.html')
+    if request.method == "POST":
+        searched = request.POST['searched']
+        students = Student.objects.filter(name__contains=searched)
+        return render(request, 'Search.html', {'searched': searched, 'students': students})
+    else:    
+        return render(request, 'Search.html', {})
+
+
 
 @csrf_exempt
 def departmentAssignment(request):

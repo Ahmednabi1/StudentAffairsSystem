@@ -8,24 +8,36 @@
 <!-- Content for the search page -->
 <script src="{% static 'js/Search.js' %}"></script>
 <h1 class="Header1">Search For Active Students</h1>
-<div class="container"> 
-<div id="Search-box">
-    <h3 id="searchAndDepartH3">Enter student Name</h3>
-    <input type="text" placeholder="Search.." id="SEARCH_NAME">
-    <button onclick="displaySearchResults()">Search</button>
-    <div id="noResults"></div>
+<div class="unique-container">
+    <div id="Search-box">
+    <form action="{% url 'search_for_student' %}" method="POST">
+        <input type="text" placeholder="Enter Student Name..." id="SEARCH_NAME">
+        <button type="submit" class="submit" id="searchButton">Search</button>
+        <div id="noResults"></div>
+    </form>
+    </div>
+
+    <table id="Search-table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>NAME</th>
+                <th>Level</th>
+                <th>Department</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- loop through the students in django and make a row for them -->
+            {% for student in students %}
+            <tr>
+                <td>{{ student.id }}</td>
+                <td>{{ student.name }}</td>
+                <td>{{ student.level }}</td>
+                <td>{{ student.department }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
 </div>
 
-<table id="Search-table">
-    <thead>
-        <tr>
-            <th>ID</th>
-            <th>NAME</th>
-            <th>Level</th>
-            <th>Department</th>
-        </tr>
-    </thead>
-    <tbody>
-    </tbody>
-</table>
 {% endblock %}

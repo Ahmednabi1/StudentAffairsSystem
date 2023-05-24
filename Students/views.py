@@ -2,6 +2,12 @@ from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from .models import Student
 from django.views.decorators.csrf import csrf_exempt
+import json
+from django.template import loader
+from django.shortcuts import render, redirect
+from django.template import RequestContext
+from django.http import JsonResponse
+from django.shortcuts import get_object_or_404
 
 @csrf_exempt
 def home(request):
@@ -44,10 +50,24 @@ def display_students(request):
 
 @csrf_exempt
 def update(request):
-    return render(request, 'Update.html')
+    students = Student.objects.all().values()
+    template = loader.get_template('Update.html')
+    context = {
+    'students': students
+    }
+    return HttpResponse(template.render(context, request))
 
 @csrf_exempt
 def search(request):
+    if request.method == 'POST':
+        studentName = request.POST.get('SEARCH_NAME')
+        students = Student.objects.filter(name=studentName)
+        
+        context = {}
+        if len(students) != 0 or students != None:
+            context = {'students': students}
+        return render(request, 'Search.html', context)
+    
     return render(request, 'Search.html')
 
 @csrf_exempt
@@ -57,3 +77,59 @@ def departmentAssignment(request):
 @csrf_exempt
 def cover(request):
     return render(request, 'cover.html')
+
+@csrf_exempt
+def NoResult(request):
+    return render(request, 'NoResult.html')
+
+@csrf_exempt
+def get_student_data(request, student_id):
+    student = get_object_or_404(Student, ID=student_id)
+    student_data = {
+        'name': student.name,
+        'ID': student.ID,
+        'GPA': student.GPA,
+        'birthDate': student.birthDate,
+        'gender': student.gender,
+        'level': student.level,
+        'status': student.status,
+        'department': student.department,
+        'email': student.email,
+        'mobilePhone': student.mobilePhone,
+    }
+    return JsonResponse(student_data)
+
+@csrf_exempt
+def update_student(request, student_id):
+    if request.method == 'PUT':
+        student = get_object_or_404(Student, ID=student_id)
+
+        # Get the updated data from the request
+        updated_data = json.loads(request.body)
+        student.name = updated_data['name']
+        student.GPA = updated_data['GPA']
+        student.birthDate = updated_data['birthDate']
+        student.gender = updated_data['gender']
+        student.level = updated_data['level']
+        student.status = updated_data['status']
+        student.department = updated_data['department']
+        student.email = updated_data['email']
+        student.mobilePhone = updated_data['mobilePhone']
+        
+        # Save the updated student record
+        student.save()
+
+        # Return a success response
+        return JsonResponse({'message': 'Student data updated successfully'})
+
+    # If the request method is not PUT, return an error response
+    return JsonResponse({'error': 'Invalid request method'}, status=405)
+
+@csrf_exempt
+def delete_student(request, student_id):
+    if request.method == 'DELETE':
+        student = get_object_or_404(Student, ID=student_id)
+        student.delete()
+        return JsonResponse({'message': 'Student deleted successfully'})
+
+    return JsonResponse({'error': 'Invalid request method'}, status=405)

@@ -40,10 +40,7 @@ function getStatus()
     if (status == true) {
         return "active";
     }
-    else
-    {
-        return "not active";
-    }
+    return "inactive";
 }
 
 function setStudentValues() {
@@ -68,6 +65,7 @@ function setStudentValues() {
     var newStudent = new Student(name, id, gpa, dob, gender, level, status, department, email, mobile);
     addStudentToLocalStorage(newStudent);
     showMessage("Registration was a Success!");
+    
 }
 
 // Function to add a student to local storage

@@ -9,7 +9,6 @@ urlpatterns = [
     path('update_student/', views.update, name='update_student'),
     path('search_for_student/', views.search, name='search_for_student'),
     path('departmentAssignment/', views.departmentAssignment, name='departmentAssignment'),
-    path('NoResult/', views.NoResult, name='NoResult'),
     path('get_student_data/<int:student_id>/', views.get_student_data, name='get_student_data'),
     path('update_student/<str:student_id>/', views.update_student, name='update_student1'),
     path('delete_student/<str:student_id>/', views.delete_student, name='delete_student'),

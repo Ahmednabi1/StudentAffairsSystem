@@ -67,7 +67,6 @@ def search(request):
         return render(request, 'Search.html', {})
 
 
-
 @csrf_exempt
 def departmentAssignment(request):
     return render(request, 'DepartmentAssignment.html')
@@ -76,9 +75,6 @@ def departmentAssignment(request):
 def cover(request):
     return render(request, 'cover.html')
 
-@csrf_exempt
-def NoResult(request):
-    return render(request, 'NoResult.html')
 
 @csrf_exempt
 def get_student_data(request, student_id):

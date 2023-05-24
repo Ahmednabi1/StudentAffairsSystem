@@ -5,10 +5,9 @@
 {% block title %}Search For a Student{% endblock %}
 
 {% block content %}
-<!-- Content for the search page -->
-<script src="{% static 'js/Search.js' %}"></script>
-<h1 class="Header1">Search For Active Students</h1>
-<div class="unique-container">
+
+<div class="Search">
+    <h1 class="Header1">Search For Active Students</h1>
     <div id="Search-box">
     <form method="POST" action="{% url 'search_for_student' %}">
         {% csrf_token %}
@@ -17,11 +16,12 @@
     </form>
     </div>
 
-    <table id="Search-table">
+    <div class="unique-container">
+    <table class="TABLE">
         <thead>
             <tr>
                 <th>ID</th>
-                <th>NAME</th>
+                <th>Name</th>
                 <th>Level</th>
                 <th>Department</th>
             </tr>
@@ -44,6 +44,7 @@
             {% endif %}
         </tbody>
     </table>
+    </div>
 </div>
 
 {% endblock %}

@@ -1,31 +1,59 @@
-<!-- DisplayAllStudents.html -->
 {% extends 'base.html' %}
 {% load static %}
 
 {% block title %}Display All Students{% endblock %}
 
 {% block content %}
-<!-- Content for the search page -->
 <script src="{% static 'js/Display.js' %}"></script>
 
-    <div class="unique-container" onload="displayStudentsInTable()">
-        <h1 class="Header1">Active/Inactive Students</h1>
-        <table id="tb">
-            <thead>
-                <tr>
-                    <th>Name</th>
-                    <th>ID</th>
-                    <th>GPA</th>
-                    <th>Date of Birth</th>
-                    <th>Gender</th>
-                    <th>Level</th>
-                    <th>Phone Number</th>
-                    <th>Department</th>
-                    <th>Email</th>
-                    <th>Status</th>
-                </tr>
-            </thead>
-        </table>
-        
-    </div>
+<div class="unique-container">
+    <h1 class="Header1">Active/Inactive Students</h1>
+    <table id="tb">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>ID</th>
+                <th>GPA</th>
+                <th>Date of Birth</th>
+                <th>Gender</th>
+                <th>Level</th>
+                <th>Phone Number</th>
+                <th>Department</th>
+                <th>Email</th>
+                <th>Status</th>
+                <th>Change Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for student in students %}
+            <tr>
+                <td>{{ student.name }}</td>
+                <td>{{ student.ID }}</td>
+                <td>{{ student.GPA }}</td>
+                <td>{{ student.birthDate }}</td>
+                <td>{{ student.gender }}</td>
+                <td>{{ student.level }}</td>
+                <td>{{ student.mobilePhone }}</td>
+                <td>{{ student.department }}</td>
+                <td>{{ student.email }}</td>
+                <td>{{ student.status }}</td>
+                <td>
+                    <form method="POST" action="{% url 'change_status' student.ID %}">
+                        {% csrf_token %}
+                        <select name="status">
+                            <option value="active" {% if student.status == 'active' %}selected{% endif %}>Active</option>
+                            <option value="inactive" {% if student.status == 'inactive' %}selected{% endif %}>Inactive</option>
+                        </select>
+                        <button type="submit">Change</button>
+                    </form>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+<script>
+    displayStudentsInTable();
+</script>
 {% endblock %}

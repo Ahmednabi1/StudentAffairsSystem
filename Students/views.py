@@ -45,8 +45,21 @@ def add_student(request):
     return render(request, 'AddaNewStudent.html')
 
 @csrf_exempt
+def change_status(request, student_id):
+    if request.method == 'POST':
+        student = Student.objects.get(ID=student_id)
+        status = request.POST.get('status')
+        student.status = status
+        student.save()
+
+    students = Student.objects.all()
+    return render(request, 'DisplayAllStudents.html', {'students': students})
+
+@csrf_exempt
 def display_students(request):
-    return render(request, 'DisplayAllStudents.html')
+    students = Student.objects.all()
+    return render(request, 'DisplayAllStudents.html', {'students': students})
+
 
 @csrf_exempt
 def update(request):
@@ -92,6 +105,7 @@ def get_student_data(request, student_id):
         'mobilePhone': student.mobilePhone,
     }
     return JsonResponse(student_data)
+
 
 @csrf_exempt
 def update_student(request, student_id):

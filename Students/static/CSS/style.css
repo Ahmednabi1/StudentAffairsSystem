@@ -72,7 +72,6 @@
 /*________________________________table&cont________________________________________________________________*/
 
 table {
-    border-spacing: 0;
     width: 100%;
     border-collapse: collapse;
     margin-top: 20px;
@@ -114,9 +113,7 @@ table {
     border-radius: 0 0 5px 5px;
   }
 
-table tr:hover {
-    background-color: #ddd;
-}
+
 
 /*________________________________Switch________________________________________________________________*/
 
@@ -369,10 +366,8 @@ input[type="date"] {
     border-radius: 20px;
 }
 
-/* _______________________Search________________________ */
-.Search container {
-    font-family: 'Montserrat', sans-serif;
-    height: 100vh;
+/* Style for the container */
+.container {
     max-width: 500px;
     margin: 0 auto;
     background-color: #f2f2f2;
@@ -388,7 +383,7 @@ input[type="date"] {
 }
 
 /* Style for the search box */
-.Search form{
+#Search-box {
     margin-bottom: 20px;
     width: 100%;
     background-color: none;
@@ -398,9 +393,9 @@ input[type="date"] {
 }
 
 
-.Search input[type="text"] {
+input[type="text"] {
     padding: 8px;
-    width: 500px;
+    width: 250px;
     border: 1px solid #ccc;
     border-radius: 5px;
     margin: 8px 0;
@@ -408,10 +403,10 @@ input[type="date"] {
     font-size: 16px;
     justify-content: center;
     align-items: center;
-    text-align: left;
+    text-align: center;
 }
  
-.Search {
+#SEARCH_NAME {
     padding: 10px;
     border-radius: 5px;
     border: none;
@@ -431,56 +426,44 @@ input[type="date"] {
     font-size: 16px;
     cursor: pointer;
     padding: 8px 15px;
-    background-color: #4779a9;
+    background-color: #4CAF50;
 }
  
 #Search-box button:hover {
-    background-color: #3a648b;
+    background-color: #3e8e41;
 }
  
 /* Style for the table */
-.TABLE {
+#Search-table {
     border-collapse: collapse;
     width: 75%;
     text-align: center;
-    justify-content: center;
-    margin-left: 10%;
-    background: #4779a9;
 }
  
-.TABLE th,
-.TABLE td {
+#Search-table th,
+#Search-table td {
+    border: 1px solid #ddd;
     padding: 8px;
-    text-align: center;
 }
  
-.TABLE th {
-    background-color: #4779a9;
+#Search-table th {
+    background-color: #333;
     color: #fff;
+    font-family: 'Montserrat', sans-serif;
     font-size: 16px;
     font-weight: bold;
     padding: 12px;
-    text-align: center;
+    text-align: left;
     text-shadow: 1px 1px 0px #000000;
-    border-collapse: collapse;
 }
 
-.TABLE td {
-    border-collapse:separate;
-    font-size: 16px;
-    padding: 12px;
-    text-align: center;
-    height: 30px;
-    background-color: #fff;
+#noResults
+{
+    color: red;
+    font-weight: bold;
+    margin-top: 10px;
 }
 
-.TABLE tr:nth-child(even) {
-    background-color: #f2f2f2;
-}
-
-.TABLE tr:hover {
-    background-color: #ddd;
-}
 /*________________________________Department Assignment________________________________________________________________*/
   
   #searchAndDepartH1 {
@@ -585,7 +568,7 @@ input[type="date"] {
 }
 
 .update th {
-    background-color: #4779a9;
+    background-color: #4CAF50;
     color: #fff;
 }
 

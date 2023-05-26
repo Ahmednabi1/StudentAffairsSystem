@@ -80,7 +80,14 @@ def search(request):
 
 
 @csrf_exempt
-def departmentAssignment(request):
+def department_details(request, student_id = 9):
+    if request.method == 'POST':
+        student = Student.objects.get(ID=student_id)
+        selected_department = request.POST.get('department')
+        student.department = selected_department
+        student.save()
+
+        return redirect('search_for_student')
     return render(request, 'DepartmentAssignment.html')
 
 @csrf_exempt

@@ -8,7 +8,7 @@
 	<script src="{% static 'js/DepartAssign.js' %}"></script>
 
 		<h1 class="Header1">Department Assignment</h1>
-		<div class="container">
+		<div class="unique-container">
 			<table id="AssignDepartTable">
 			<thead>
 				<tr>
@@ -19,34 +19,30 @@
 			</thead>
 
 			<tr id="StudentRowinAssignDepartment">
-				<td id="StdIDAssignDepart"><b></b></td>
-				<td id="StdNameAssignDepart"></td>
+				<td><b>{{student.ID}}</b></td>
+				<td>{{student.name}}</td>
+				<form method="POST" action="{% url 'department_details' %}">
+				{% csrf_token %}
 				<td>
 					<select name="Departments" id="Departments">
-						<option value="IS">IS</option>
-						<option value="AI">AI</option>
-						<option value="CS">CS</option>
-						<option value="DS">DS</option>
-						<option value="IT">IT</option>
-					</select>
+						<option value="IS" {% if student.department == "IS" %}selected{% endif %}>IS</option>
+						<option value="AI" {% if student.department == "AI" %}selected{% endif %}>AI</option>
+						<option value="CS" {% if student.department == "CS" %}selected{% endif %}>CS</option>
+						<option value="DS" {% if student.department == "DS" %}selected{% endif %}>DS</option>
+						<option value="IT" {% if student.department == "IT" %}selected{% endif %}>IT</option>
+					  </select>	  
 				</td>
+
 			</tr>
 		</table>
 
 		<br><br>
 
-		<button id="saveDepartmentButton">Save</button>
+		<div class="BUTTON">
+		<button id="saveDepartmentButton" style="margin-left:50%">Save</button>
+		</div>
+		</form>
 
 	</div>
-
-	<script>
-		window.addEventListener('storage', function(event) {
-		  if (event.key === 'studentUpdated') {
-			const studentID = event.newValue;
-			const department = localStorage.getItem('department_' + studentID);
-			updateDepartmentInSearchPage(studentID, department);
-		  }
-		});
-	  </script>
 {% endblock %}
 

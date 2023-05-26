@@ -72,6 +72,7 @@
 /*________________________________table&cont________________________________________________________________*/
 
 table {
+    border-spacing: 0;
     width: 100%;
     border-collapse: collapse;
     margin-top: 20px;
@@ -113,7 +114,9 @@ table {
     border-radius: 0 0 5px 5px;
   }
 
-
+table tr:hover {
+    background-color: #ddd;
+}
 
 /*________________________________Switch________________________________________________________________*/
 
@@ -216,8 +219,7 @@ img.backgroundS {
     margin: auto;
     width: fit-content;
     top: 50%;
-
-
+    margin-top: 3%;
 
 }
 /* label{
@@ -366,8 +368,10 @@ input[type="date"] {
     border-radius: 20px;
 }
 
-/* Style for the container */
-.container {
+/* _______________________Search________________________ */
+.Search container {
+    font-family: 'Montserrat', sans-serif;
+    height: 100vh;
     max-width: 500px;
     margin: 0 auto;
     background-color: #f2f2f2;
@@ -383,7 +387,7 @@ input[type="date"] {
 }
 
 /* Style for the search box */
-#Search-box {
+.Search form{
     margin-bottom: 20px;
     width: 100%;
     background-color: none;
@@ -393,9 +397,9 @@ input[type="date"] {
 }
 
 
-input[type="text"] {
+.Search input[type="text"] {
     padding: 8px;
-    width: 250px;
+    width: 500px;
     border: 1px solid #ccc;
     border-radius: 5px;
     margin: 8px 0;
@@ -403,134 +407,92 @@ input[type="text"] {
     font-size: 16px;
     justify-content: center;
     align-items: center;
-    text-align: center;
+    text-align: left;
 }
  
-#SEARCH_NAME {
+.Search {
     padding: 10px;
     border-radius: 5px;
     border: none;
     font-size: 16px;
-    margin-right: 10px;
     width: 100%;
     text-align: center;
-    justify-content: center;
-    align-items: center;
 }
  
-#Search-box button {
-    /* padding: 10px 20px; */
+.BUTTON button{
     border-radius: 5px;
     border: none;
     color: #fff;
     font-size: 16px;
     cursor: pointer;
     padding: 8px 15px;
-    background-color: #4CAF50;
+    background-color: #4779a9;
+    width: 80px;
+    height: 42px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-left: 0px;
 }
  
-#Search-box button:hover {
-    background-color: #3e8e41;
+.BUTTON button:hover {
+    background-color: #3a648b;
 }
  
 /* Style for the table */
-#Search-table {
-    border-collapse: collapse;
+
+.TABLE {
+    border-collapse: separate;
     width: 75%;
+    text-align: center;
+    justify-content: center;
+    margin-left: 10%;
+    border-radius: 0%;
+}
+
+.TABLE thead {
+    background-color: #4779a9;
+}
+
+.TABLE tbody {
+    background-color: #f2f2f2;
+}
+ 
+.TABLE th,
+.TABLE td {
+    padding: 10px;
     text-align: center;
 }
  
-#Search-table th,
-#Search-table td {
-    border: 1px solid #ddd;
-    padding: 8px;
-}
- 
-#Search-table th {
-    background-color: #333;
+.TABLE th {
+    background-color: #4779a9;
     color: #fff;
-    font-family: 'Montserrat', sans-serif;
     font-size: 16px;
     font-weight: bold;
     padding: 12px;
-    text-align: left;
-    text-shadow: 1px 1px 0px #000000;
-}
-
-#noResults
-{
-    color: red;
-    font-weight: bold;
-    margin-top: 10px;
-}
-
-/*________________________________Department Assignment________________________________________________________________*/
-  
-  #searchAndDepartH1 {
-    color: #333;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: bold;
-    margin-bottom: 20px;
-    text-shadow: 1px 1px 0px #000000;
-  }
-
-  #searchAndDepartH3{
-    color: #333;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: bold;
-    margin-bottom: 20px;
-  }
-  
-  #AssignDepartTable {
-    border-collapse: collapse;
-    margin: 0 auto;
-    width: 75%;
     text-align: center;
-  }
-  
-  #AssignDepartTable th {
-    background-color: #333;
-    color: #fff;
-    font-family: 'Montserrat', sans-serif;
+}
+
+.TABLE td {
     font-size: 16px;
-    font-weight: bold;
     padding: 12px;
-    text-align: left;
-    text-shadow: 1px 1px 0px #000000;
-  }
-  
-  #AssignDepartTable td {
-    border: 1px solid #ddd;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 14px;
-    padding: 8px;
-    text-align: left;
-  }
-  
-  #Departments {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 14px;
-    margin: 0;
-    padding: 5px;
-    font-weight: bold;
-  }
-  
-  #saveDepartmentButton {
-    background-color: #333;
-    border: none;
-    border-radius: 5px;
-    color: #fff;
-    cursor: pointer;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 16px;
-    margin-top: 20px;
-    padding: 12px 24px;
     text-align: center;
-    text-decoration: none;
-    text-shadow: 1px 1px 0px #000000;
-    display: block;
-    margin: 0 auto;
-  }
+    height: 30px;
+    border-radius: 0%;
+}
+
+.TABLE tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.TABLE tr:nth-child(odd) {
+    background-color: #ddd;
+}
+
+.TABLE tr:hover {
+    background-color: #fff;
+}
+
   /*________________________________Update________________________________________________________________*/
 
 .update {
@@ -568,7 +530,7 @@ input[type="text"] {
 }
 
 .update th {
-    background-color: #4CAF50;
+    background-color: #4779a9;
     color: #fff;
 }
 

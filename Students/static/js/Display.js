@@ -40,9 +40,9 @@ function displayStudentsInTable() {
             statusSwitch.className = "status-switch";
             var statusInput = document.createElement("input");
             statusInput.type = "checkbox";
-            statusInput.checked = student.status == "active";
+            statusInput.checked = student.status == "Active";
             statusInput.addEventListener("click", function () {
-                student.status = this.checked ? "active" : "not active";
+                student.status = this.checked ? "Active" : "Inactive";
                 localStorage.setItem("students", JSON.stringify(storedStudents));
             });
             var statusSlider = document.createElement("span");

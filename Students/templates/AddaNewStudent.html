@@ -38,7 +38,7 @@
             </select>
             <label for="c1">Status:             </label>
             <label class="status-switch">
-                <input type="checkbox" class="status-checkbox" value="active" id="c1">
+                <input type="checkbox" class="status-checkbox" value="Active" id="c1" name="status">
                 <span class="status-slider"></span>
             </label><br><br></br>
             <label for="department">Department:</label>
@@ -60,6 +60,9 @@
     </div>
 </div>
 </form>
-
+<script>
+    var sliderCheckbox = document.getElementById('c1');
+    var status = sliderCheckbox.checked ? 'Active' : 'Inactive';
+</script>
 {% endblock %}
 

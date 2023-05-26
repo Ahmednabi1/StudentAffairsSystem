@@ -4,7 +4,7 @@
 {% block title %}Display All Students{% endblock %}
 
 {% block content %}
-<script src="{% static 'js/Display.js' %}"></script>
+<!-- <script src="{% static 'js/Display.js' %}"></script> -->
 
 <div class="unique-container">
     <h1 class="Header1">Active/Inactive Students</h1>
@@ -41,8 +41,8 @@
                     <form method="POST" action="{% url 'change_status' student.ID %}">
                         {% csrf_token %}
                         <select name="status">
-                            <option value="active" {% if student.status == 'active' %}selected{% endif %}>Active</option>
-                            <option value="inactive" {% if student.status == 'inactive' %}selected{% endif %}>Inactive</option>
+                            <option value="Active" {% if student.status == 'Active' %}selected{% endif %}>Active</option>
+                            <option value="Inactive" {% if student.status == 'Inactive' %}selected{% endif %}>Inactive</option>
                         </select>
                         <button type="submit">Change</button>
                     </form>

@@ -27,18 +27,6 @@ def add_student(request):
         email = request.POST.get('fname8')
         mobile_phone = request.POST.get('phone number')
 
-        print('input: ')
-        print('name: ', name)
-        print('ID: ', ID)
-        print('GPA: ', GPA)
-        print('birth_date: ', birth_date)
-        print('gender: ', gender)
-        print('level: ', level)
-        print('status: ', status)
-        print('department: ', department)
-        print('email: ', email)
-        print('mobile_phone: ', mobile_phone)
-
         student = Student(
             name=name,
             ID=ID,
@@ -56,6 +44,7 @@ def add_student(request):
 
     return render(request, 'AddaNewStudent.html')
 
+
 @csrf_exempt
 def change_status(request, student_id):
     if request.method == 'POST':
@@ -70,6 +59,8 @@ def change_status(request, student_id):
 @csrf_exempt
 def display_students(request):
     students = Student.objects.all()
+    for student in students:
+        print(student.status)
     return render(request, 'DisplayAllStudents.html', {'students': students})
 
 @csrf_exempt
@@ -83,29 +74,34 @@ def update(request):
 
 @csrf_exempt
 def search(request):
-    if request.method == "POST":
+    students = []
+    if request.method == 'POST':
         searched = request.POST['searched']
         students = Student.objects.filter(name__contains=searched)
-        return render(request, 'Search.html', {'searched': searched, 'students': students})
-    else:    
-        return render(request, 'Search.html', {})
+    return render(request, 'Search.html', {'students': students})
 
 
 @csrf_exempt
-def department_details(request, student_id = 9):
+def department_details(request, student_id):
+    print(student_id)
+    student = Student.objects.get(ID=student_id)
+    departments = ['CS', 'IS', 'IT', 'DS', 'AI']
     if request.method == 'POST':
-        student = Student.objects.get(ID=student_id)
         selected_department = request.POST.get('department')
         student.department = selected_department
         student.save()
-
-        return render(request, 'DepartmentAssignment.html', {'student': student})
-    return render(request, 'DepartmentAssignment.html')
+        return redirect('search_for_student')
+    return render(request, 'DepartmentAssignment.html', {
+        'student': student,
+        'departments': departments
+    })
 
 @csrf_exempt
 def cover(request):
     return render(request, 'cover.html')
 
+def error(request):
+    return render(request, 'error.html')
 
 @csrf_exempt
 def get_student_data(request, student_id):

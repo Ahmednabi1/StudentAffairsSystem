@@ -4,7 +4,6 @@
 {% block title %}Display All Students{% endblock %}
 
 {% block content %}
-<!-- <script src="{% static 'js/Display.js' %}"></script> -->
 
 <div class="unique-container">
     <h1 class="Header1">Active/Inactive Students</h1>
@@ -37,7 +36,7 @@
                 <td>{{ student.department }}</td>
                 <td>{{ student.email }}</td>
                 <td>{{ student.status }}</td>
-                <td>
+                {% comment %} <td>
                     <form method="POST" action="{% url 'change_status' student.ID %}">
                         {% csrf_token %}
                         <select name="status">
@@ -46,14 +45,10 @@
                         </select>
                         <button type="submit">Change</button>
                     </form>
-                </td>
+                </td> {% endcomment %}
             </tr>
             {% endfor %}
         </tbody>
     </table>
 </div>
-
-<script>
-    displayStudentsInTable();
-</script>
 {% endblock %}

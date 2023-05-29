@@ -10,39 +10,38 @@
 		<h1 class="Header1">Department Assignment</h1>
 		<div class="unique-container">
 			<table id="AssignDepartTable">
-			<thead>
-				<tr>
-					<th>Student ID</th>
-					<th>Student Name</th>
-					<th>Department</th>
-				</tr>
-			</thead>
-
-			<tr id="StudentRowinAssignDepartment">
-				<td><b>{{student.ID}}</b></td>
-				<td>{{student.name}}</td>
-				<form method="POST" action="{% url 'department_details' %}">
-				{% csrf_token %}
-				<td>
-					<select name="Departments" id="Departments">
-						<option value="IS" {% if student.department == "IS" %}selected{% endif %}>IS</option>
-						<option value="AI" {% if student.department == "AI" %}selected{% endif %}>AI</option>
-						<option value="CS" {% if student.department == "CS" %}selected{% endif %}>CS</option>
-						<option value="DS" {% if student.department == "DS" %}selected{% endif %}>DS</option>
-						<option value="IT" {% if student.department == "IT" %}selected{% endif %}>IT</option>
-					  </select>	  
-				</td>
-
-			</tr>
-		</table>
-
+				<thead>
+					<tr>
+						<th>Student ID</th>
+						<th>Student Name</th>
+						<th>Department</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>{{ student.ID }}</td>
+						<td>{{ student.name }}</td>
+						<td>
+							<form method="POST" action="{% url 'department_details' student_id=student.ID %}">
+								{% csrf_token %}
+								<select name="department">
+									{% for department in departments %}
+										<option value="{{ department }}"
+												{% if student.department == department %}selected{% endif %}>
+											{{ department }}
+										</option>
+									{% endfor %}
+								</select>
+								<input type="submit" value="Save">
+							</form>
+						</td>
+					</tr>
+				</tbody>
+			</table>
 		<br><br>
-
-		<div class="BUTTON">
+		{% comment %} <div class="BUTTON">
 		<button id="saveDepartmentButton" style="margin-left:50%">Save</button>
-		</div>
-		</form>
-
+		</div> {% endcomment %}
 	</div>
 {% endblock %}
 

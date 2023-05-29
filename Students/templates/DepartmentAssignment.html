@@ -6,10 +6,9 @@
 
 {% block content %}
 	<script src="{% static 'js/DepartAssign.js' %}"></script>
-
 		<h1 class="Header1">Department Assignment</h1>
 		<div class="unique-container">
-			<table id="AssignDepartTable">
+			<table class="TABLE">
 				<thead>
 					<tr>
 						<th>Student ID</th>
@@ -32,16 +31,13 @@
 										</option>
 									{% endfor %}
 								</select>
-								<input type="submit" value="Save">
-							</form>
-						</td>
-					</tr>
-				</tbody>
-			</table>
-		<br><br>
-		{% comment %} <div class="BUTTON">
-		<button id="saveDepartmentButton" style="margin-left:50%">Save</button>
-		</div> {% endcomment %}
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			<br><br>
+		<input type="submit" class ="SUBMIT" value="Save" style="margin-left:45%">
+	</form>
 	</div>
 {% endblock %}
 

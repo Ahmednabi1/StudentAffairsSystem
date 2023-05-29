@@ -12,18 +12,13 @@
     <form method="POST" action="{% url 'search_for_student' %}">
         {% csrf_token %}
         <input type="text" placeholder="Enter Student Name..." name ="searched" id="SEARCH_NAME">
-        <div class="BUTTON">
-        <input type="submit" value="Search" class="submit" id="searchButton">
-        </div>
-        {% comment %} <div class="BUTTON">
-        <button type="submit" class="submit" style="position: absolute" id="searchButton">Search</button>
-        </div> {% endcomment %}
+        <input type="submit" value="Search" class="SUBMIT" id="searchButton">
     </form>
     </div>
 
     <div class="unique-container">
     {% if students %}
-        <table>
+        <table class="TABLE">
             <thead>
                 <tr>
                     <th>ID</th>
@@ -41,9 +36,13 @@
                     <td>{{ student.level }}</td>
                     <td>
                         {% if student.level >= 3 %}
-                            <a href="{% url 'department_details' student_id=student.ID %}">{{ student.department }}</a>
+                            {% if student.department == "-" %}
+                                <a href="{% url 'department_details' student_id=student.ID %}">Assign Department</a>
+                            {% else %}
+                                <a href="{% url 'department_details' student_id=student.ID %}">{{ student.department }}</a>
+                            {% endif %}
                         {% else %}
-                            {{ student.department }}
+                            Not Assigned Yet
                         {% endif %}
                     </td>                                                
                 </tr>

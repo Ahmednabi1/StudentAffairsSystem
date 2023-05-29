@@ -265,12 +265,13 @@ input[type="text"] {
 .submit:hover {
     background-color: #b9a88e;
 }
+
 .date{
     display: block;
     margin-bottom: 10px;
     font-weight: bold;
-
 }
+
 input[type="date"] {
     padding: 8px;
     border: 1px solid #ccc;
@@ -383,7 +384,7 @@ input[type="date"] {
     text-align: center;
 }
  
-.BUTTON button{
+.SUBMIT {
     border-radius: 5px;
     border: none;
     color: #fff;
@@ -400,22 +401,19 @@ input[type="date"] {
     display: flex;
 }
  
-.BUTTON button:hover {
+.SUBMIT:hover {
     background-color: #3a648b;
 }
+
  
 /* Style for the table */
 
 .TABLE {
-    border-collapse: separate;
-    width: 75%;
-    text-align: center;
-    justify-content: center;
-    margin-left: 10%;
-    border-radius: 0%;
+    width:60%;
+    margin-left: 20%;
 }
 
-.TABLE thead {
+/* .TABLE thead {
     background-color: #4779a9;
 }
 
@@ -456,7 +454,7 @@ input[type="date"] {
 
 .TABLE tr:hover {
     background-color: #fff;
-}
+} */
 
   /*________________________________Update________________________________________________________________*/
 

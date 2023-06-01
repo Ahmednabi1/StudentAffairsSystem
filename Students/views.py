@@ -22,10 +22,7 @@ def add_student(request):
         birth_date = request.POST.get('dob')
         gender = request.POST.get('gender')
         level = request.POST.get('student-level')
-        if 'status' in request.POST:
-            status = 'Active'
-        else:
-            status = 'Inactive'
+        status = request.POST.get('status')
         department = request.POST.get('department')
         email = request.POST.get('fname8')
         mobile_phone = request.POST.get('phone number')

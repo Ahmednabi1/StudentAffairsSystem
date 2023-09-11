@@ -1,4 +1,4 @@
-# Student Affairs Management System (Django)
+# Student Affairs Management System
 
 ## Overview
 
@@ -22,3 +22,56 @@ The **Student Affairs Management System** is a web application built using **Dja
 - [Laila Hesham]
 - [Hagar Galal]
 - [Salah Hesham](https://github.com/salahhesham8)
+
+## Home Page
+![image](https://github.com/Basma2423/StudentAffairsSystem/assets/92788812/6c6586b9-1d4e-4861-b84f-edae17bd2b9f)
+## Displaying Students
+![image](https://github.com/Basma2423/StudentAffairsSystem/assets/92788812/3d2802a6-9f54-46f8-a64e-706ec6e5ff59)
+## Searching For Students
+![image](https://github.com/Basma2423/StudentAffairsSystem/assets/92788812/5da0873b-e473-4762-b25c-645c084f0ceb)
+
+## Technologies and Frameworks Used
+
+- **Django**: Our robust backend framework that powers the core of the Student Affairs Management System.
+- **JavaScript**: Used to enhance the interactivity and functionality of the web application.
+- **CSS**: Responsible for styling and making the user interface visually appealing.
+- **HTML**: The fundamental building block of our web pages, defining their structure and content.
+
+## Installation
+
+To get this project up and running on your local machine, follow these steps:
+
+1. **Clone the repository**:
+   ```
+   git clone <repository-url>
+   cd student-affairs-management-system
+   ```
+2. **Create a virtual environment (recommended)**:
+   ```
+   python -m venv venv
+   ```
+3. **Activate the virtual environment**:
+    Linux/macOS:
+    ```
+    source venv/bin/activate
+    ```
+    Windows:
+    ```
+    venv\Scripts\activate
+    ```
+3. **Install project dependencies**:
+    ```
+    pip install -r requirement.txt
+    ```
+4. **Run database migrations**:
+    ```
+    python manage.py migrate
+    ```
+5. **Start the development server**:
+    ```
+    python manage.py runserver
+    ```
+6. Access the application in your web browser at http://localhost:8000.
+
+
+

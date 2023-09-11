@@ -24,12 +24,11 @@ The **Student Affairs Management System** is a web application built using **Dja
 - [Salah Hesham](https://github.com/salahhesham8)
 
 ## Home Page
-![Screenshot (124)](https://github.com/Basma2423/StudentAffairsSystem/assets/92788812/38867dc7-576c-47f2-b725-302163271c21)
+![Home Page](Home_Page.png)
 ## Displaying Students
-![Screenshot (125)](https://github.com/Basma2423/StudentAffairsSystem/assets/92788812/6fc0c5b1-40ef-4765-a9ef-f6151f615a4b)
+![Display Students](Display_Students.png)
 ## Searching For Students
-![Screenshot (126)](https://github.com/Basma2423/StudentAffairsSystem/assets/92788812/3497f082-23b8-4d9f-86db-53324b83bee9)
-
+![Search for Students](Search_For_Students.png)
 
 ## Technologies and Frameworks Used
 
